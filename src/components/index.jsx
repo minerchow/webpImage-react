@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import WebpImage from './index/webpImage';
+import WebpImage from 'webpimagereact/lib/webpImage';
 class Index extends Component {
     constructor(props){
         super(props);
