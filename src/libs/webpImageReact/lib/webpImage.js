@@ -26,11 +26,11 @@ var WebpImage = function (_Component) {
     function WebpImage(props) {
         _classCallCheck(this, WebpImage);
 
+        // console.log(this.props)
         var _this = _possibleConstructorReturn(this, (WebpImage.__proto__ || Object.getPrototypeOf(WebpImage)).call(this, props));
 
-        console.log(_this.props);
         _this.state = {
-            source: props.source
+            source: ''
         };
         return _this;
     }
@@ -38,25 +38,52 @@ var WebpImage = function (_Component) {
     _createClass(WebpImage, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement('img', { src: this.state.source, width: this.props.width, height: this.props.height, className: this.props.className });
+            console.log(this.state.source);
+            var imgSource = void 0;
+            if (this.state.source) {
+                imgSource = _react2.default.createElement('img', { src: this.state.source, width: this.props.width, height: this.props.height, className: this.props.className });
+            } else {
+                imgSource = '';
+            }
+            return _react2.default.createElement(
+                'div',
+                null,
+                imgSource
+            );
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(nextProps) {
+            // ...
+            if (nextProps) {
+                this.convertWebP(nextProps);
+            }
         }
     }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
-
+            this.convertWebP(this.props);
+        }
+    }, {
+        key: 'convertWebP',
+        value: function convertWebP(nextProps) {
             var canvas = document.createElement('canvas');
             if (Boolean(canvas.getContext && canvas.getContext('2d'))) {
-                if (canvas.toDataURL('image/webp').indexOf('data:image/webp') > -1) {
-                    if (this.state.source.indexOf('?x-oss-process=image') > -1) {
+                if (canvas.toDataURL('image/webp').indexOf('data:image/webp') > -1 && nextProps.source) {
+                    if (nextProps.source.indexOf('?x-oss-process=image') > -1) {
                         this.setState({
-                            source: this.state.source + "/format,webp"
+                            source: nextProps.source + "/format,webp"
                         });
                     } else {
                         this.setState({
-                            source: this.state.source + "?x-oss-process=image/format,webp"
+                            source: nextProps.source + "?x-oss-process=image/format,webp"
                         });
                     }
-                } else {}
+                } else {
+                    this.setState({
+                        source: nextProps.source
+                    });
+                }
             }
         }
     }]);
