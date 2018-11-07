@@ -50,7 +50,9 @@ class WebpImage extends Component {
                 }
                 
             }else{
-
+                this.setState({
+                    source : nextProps.source 
+                })
             }
         }
     }
