@@ -70,7 +70,7 @@ var WebpImage = function (_Component) {
             var canvas = document.createElement('canvas');
             if (Boolean(canvas.getContext && canvas.getContext('2d'))) {
                 if (canvas.toDataURL('image/webp').indexOf('data:image/webp') > -1 && nextProps.source) {
-                    if (nextProps.source.indexOf('?x-oss-process=image') > -1) {
+                    if (nextProps.source && nextProps.source.indexOf('?x-oss-process=image') > -1) {
                         this.setState({
                             source: nextProps.source + "/format,webp"
                         });
