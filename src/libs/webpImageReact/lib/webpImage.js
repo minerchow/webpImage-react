@@ -38,7 +38,7 @@ var WebpImage = function (_Component) {
     _createClass(WebpImage, [{
         key: 'render',
         value: function render() {
-            console.log(this.state.source);
+            //    console.log(this.state.source)
             var imgSource = void 0;
             if (this.state.source) {
                 imgSource = _react2.default.createElement('img', { src: this.state.source, width: this.props.width, height: this.props.height, className: this.props.className });

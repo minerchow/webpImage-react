@@ -10,7 +10,7 @@ class WebpImage extends Component {
         }
     }
     render(){
-        console.log(this.state.source)
+    //    console.log(this.state.source)
         let imgSource;
         if(this.state.source){
             imgSource = <img src={this.state.source} width={this.props.width} height={this.props.height} className={this.props.className}/>
