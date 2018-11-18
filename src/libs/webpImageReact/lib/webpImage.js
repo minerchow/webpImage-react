@@ -55,7 +55,7 @@ var WebpImage = function (_Component) {
         key: 'componentWillReceiveProps',
         value: function componentWillReceiveProps(nextProps) {
             // ...
-            if (nextProps) {
+            if (nextProps.source) {
                 this.convertWebP(nextProps);
             }
         }
