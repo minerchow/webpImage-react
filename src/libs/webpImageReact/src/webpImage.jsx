@@ -22,7 +22,7 @@ class WebpImage extends Component {
     }
     componentWillReceiveProps(nextProps) {
         // ...
-        if(nextProps){
+        if(nextProps.source){
             this.convertWebP(nextProps)
         }
         
