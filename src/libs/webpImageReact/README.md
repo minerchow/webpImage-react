@@ -1,3 +1,11 @@
+# 使用文档
+## 下载
+### npm install @gaodun.com/webp-react --save
+
+
+
+## 示例代码
+``` jsx
 import React, { Component } from 'react';
 import { render } from 'react-dom';
  import WebpImage from '@gaodun.com/webp-react/lib/webpImage';
@@ -18,9 +26,9 @@ class Index extends Component {
         }, 2000);
     }
     render(){
-        return <div>
+        return (<div>
             <WebpImage className="a" source={this.state.imgUrl}></WebpImage>
-        </div>
+        </div>)
     }
 
 }
@@ -28,3 +36,13 @@ class Index extends Component {
 
 
 export default Index;
+
+```
+
+
+### 参数 
+
+#### source 需要转webp格式的图片cdn地址（目前支持阿里云oss）
+#### className 定义图片的class名字
+#### width 图片宽度
+#### height 图片高度

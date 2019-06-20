@@ -1,6 +1,6 @@
 {
-  "name": "webpimagereact",
-  "version": "1.0.6",
+  "name": "@gaodun.com/webp-react",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/webpImage",
   "scripts": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/minerchow/webpImage-react#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1"
   }
